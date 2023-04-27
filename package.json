@@ -1,0 +1,32 @@
+{
+  "name": "@bedrock-ui/utils",
+  "version": "0.0.1",
+  "description": "Bedrock UI Utils",
+  "author": "Matthew Wolfe",
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "module": "lib/esm/index.js",
+  "main": "lib/cjs/index.js",
+  "types": "lib/cjs/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "pnpm rm:build && pnpm build:cjs && pnpm build:esm",
+    "build:cjs": "tsc --project tsconfig.build-cjs.json && tsc-alias -p tsconfig.build-cjs.json",
+    "build:esm": "tsc --project tsconfig.build-esm.json && tsc-alias -p tsconfig.build-esm.json",
+    "rm:build": "rimraf lib",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^18"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.0",
+    "tsc-alias": "^1.8.5",
+    "typescript": "^5.0.4"
+  }
+}
