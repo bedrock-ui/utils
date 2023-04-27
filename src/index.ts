@@ -1,5 +1,5 @@
-export { capitalize } from './capitalize';
-export { groupBy } from './groupBy';
-export { keyBy } from './keyBy';
-export { orderBy } from './orderBy';
-export { range } from './range';
+export { capitalize } from 'utils/capitalize';
+export { groupBy } from 'utils/groupBy';
+export { keyBy } from 'utils/keyBy';
+export { orderBy } from 'utils/orderBy';
+export { range } from 'utils/range';
