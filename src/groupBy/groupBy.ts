@@ -1,3 +1,1 @@
-export function groupBy() {
-
-}
+export function groupBy() {}
