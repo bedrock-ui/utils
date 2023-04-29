@@ -6,6 +6,8 @@ interface User {
   lastName: string;
 }
 
+const mockConsoleWarn = jest.spyOn(console, 'warn').mockImplementation();
+
 const users: User[] = [
   {
     id: '3',
@@ -66,5 +68,14 @@ describe('orderBy', () => {
       usersWithDuplicateNames[0],
       usersWithDuplicateNames[2],
     ]);
+  });
+
+  test('warn on different length properties and orders', () => {
+    orderBy(usersWithDuplicateNames, ['firstName', 'id'], ['asc']);
+
+    expect(mockConsoleWarn).toHaveBeenCalledTimes(1);
+    expect(mockConsoleWarn).toHaveBeenCalledWith(
+      'orderBy - property and order arrays are not the same length - properties: firstName,id, orders: asc'
+    );
   });
 });
