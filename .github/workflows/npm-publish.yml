@@ -33,7 +33,7 @@ jobs:
       - run: git push "https://$GITHUB_ACTOR:${{ secrets.ACCESS_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" --follow-tags
       - run: git push "https://$GITHUB_ACTOR:${{ secrets.ACCESS_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" --tags
         working-directory: ./
-      - run: npm install -g pnpm@7.32.2
+      - run: npm install -g pnpm@8.3.1
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
         working-directory: ./
