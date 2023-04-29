@@ -1,24 +1,24 @@
 import type { TypeofArray } from 'types/array';
 
+function sortFn<T>(a: T, b: T): number {
+  if (typeof a === 'string' && typeof b === 'string') {
+    return a.localeCompare(b, 'en', { sensitivity: 'base' });
+  }
+
+  if (a < b) {
+    return -1;
+  }
+
+  if (a > b) {
+    return 1;
+  }
+
+  return 0;
+}
+
 export function orderBy<T extends TypeofArray<T>[], P extends keyof TypeofArray<T>>(
   array: T,
   property: P
 ) {
-  return [...array].sort((a, b) => {
-    const aValue = a[property];
-    const bValue = b[property];
-
-    if (typeof aValue === 'string' && typeof bValue === 'string') {
-      return aValue.localeCompare(bValue, 'en', { sensitivity: 'base' });
-    }
-
-    if (aValue < bValue) {
-      return -1;
-    }
-    if (aValue > bValue) {
-      return 1;
-    }
-
-    return 0;
-  });
+  return [...array].sort((a, b) => sortFn(a[property], b[property]));
 }

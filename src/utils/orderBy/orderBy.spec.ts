@@ -9,25 +9,27 @@ interface User {
 const users: User[] = [
   {
     id: '3',
-    firstName: 'Test1',
+    firstName: 'Test3',
+    lastName: 'User3',
+  },
+  {
+    id: '1',
+    firstName: 'Best1',
     lastName: 'User1',
   },
   {
     id: '2',
-    firstName: 'Test2',
+    firstName: 'Rest2',
     lastName: 'User2',
-  },
-  {
-    id: '1',
-    firstName: 'Test3',
-    lastName: 'User3',
   },
 ];
 
 describe('orderBy', () => {
   test('id', () => {
-    const result = orderBy(users, 'id');
+    expect(orderBy(users, 'id')).toEqual([users[1], users[2], users[0]]);
+  });
 
-    console.log(result);
+  test('firstName', () => {
+    expect(orderBy(users, 'firstName')).toEqual([users[1], users[2], users[0]]);
   });
 });
