@@ -55,7 +55,7 @@ describe('keyBy', () => {
 
     expect(mockConsoleWarn).toHaveBeenCalledTimes(1);
     expect(mockConsoleWarn).toHaveBeenCalledWith(
-      'duplicate key for keyBy: "1" already exists in the map'
+      'keyBy - duplicate key: "1" already exists in the map'
     );
   });
 });

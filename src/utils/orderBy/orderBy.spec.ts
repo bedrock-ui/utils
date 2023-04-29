@@ -24,16 +24,47 @@ const users: User[] = [
   },
 ];
 
+const usersWithDuplicateNames: User[] = [
+  {
+    id: '3',
+    firstName: 'Test',
+    lastName: 'User3',
+  },
+  {
+    id: '1',
+    firstName: 'Test',
+    lastName: 'User1',
+  },
+  {
+    id: '2',
+    firstName: 'Test2',
+    lastName: 'User2',
+  },
+];
+
 describe('orderBy', () => {
   test('id', () => {
-    expect(orderBy(users, 'id')).toEqual([users[1], users[2], users[0]]);
+    const result = orderBy(users, ['id'], ['asc']);
+    expect(result).toEqual([users[1], users[2], users[0]]);
   });
 
   test('firstName', () => {
-    expect(orderBy(users, 'firstName')).toEqual([users[1], users[2], users[0]]);
+    const result = orderBy(users, ['firstName'], ['asc']);
+    expect(result).toEqual([users[1], users[2], users[0]]);
   });
 
   test('id desc', () => {
-    expect(orderBy(users, 'id', 'desc')).toEqual([users[0], users[2], users[1]]);
+    const result = orderBy(users, ['id'], ['desc']);
+    expect(result).toEqual([users[0], users[2], users[1]]);
+  });
+
+  test('firstName, id, with duplicate values', () => {
+    const result = orderBy(usersWithDuplicateNames, ['firstName', 'id'], ['asc', 'asc']);
+
+    expect(result).toEqual([
+      usersWithDuplicateNames[1],
+      usersWithDuplicateNames[0],
+      usersWithDuplicateNames[2],
+    ]);
   });
 });

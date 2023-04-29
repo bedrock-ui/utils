@@ -8,7 +8,7 @@ export function keyBy<T extends TypeofArray<T>[], P extends keyof TypeofArray<T>
 
   array.forEach((element: TypeofArray<T>) => {
     if (map.has(element[property])) {
-      console.warn(`duplicate key for keyBy: "${element[property]}" already exists in the map`);
+      console.warn(`keyBy - duplicate key: "${element[property]}" already exists in the map`);
     }
 
     map.set(element[property], element);
