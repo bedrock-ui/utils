@@ -1,6 +1,8 @@
 import type { TypeofArray } from 'types/array';
 
-function sortFn<T>(a: T, b: T): number {
+type Order = 'asc' | 'desc';
+
+function sortFn<T>(a: T, b: T, order: Order): number {
   if (typeof a === 'string' && typeof b === 'string') {
     return a.localeCompare(b, 'en', { sensitivity: 'base' });
   }
@@ -18,7 +20,14 @@ function sortFn<T>(a: T, b: T): number {
 
 export function orderBy<T extends TypeofArray<T>[], P extends keyof TypeofArray<T>>(
   array: T,
-  property: P
+  property: P,
+  order: Order = 'asc'
 ) {
-  return [...array].sort((a, b) => sortFn(a[property], b[property]));
+  const sortedArray = [...array].sort((a, b) => sortFn(a[property], b[property], order));
+
+  if (order === 'desc') {
+    return sortedArray.reverse();
+  }
+
+  return sortedArray;
 }

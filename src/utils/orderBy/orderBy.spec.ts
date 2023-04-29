@@ -32,4 +32,8 @@ describe('orderBy', () => {
   test('firstName', () => {
     expect(orderBy(users, 'firstName')).toEqual([users[1], users[2], users[0]]);
   });
+
+  test('id desc', () => {
+    expect(orderBy(users, 'id', 'desc')).toEqual([users[0], users[2], users[1]]);
+  });
 });
