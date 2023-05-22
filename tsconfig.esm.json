@@ -10,7 +10,10 @@
     "moduleResolution": "node",
     "outDir": "lib/esm",
     "strict": true,
-    "target": "es2019"
+    "target": "es2022"
+  },
+  "tsc-alias": {
+    "resolveFullPaths": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": [

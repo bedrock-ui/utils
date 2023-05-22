@@ -7,10 +7,18 @@
   "files": [
     "lib"
   ],
-  "module": "lib/esm/index.js",
-  "main": "lib/cjs/index.js",
-  "types": "lib/cjs/index.d.ts",
+  "type": "module",
   "sideEffects": false,
+  "types": "lib/esm/index.d.ts",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/esm/index.d.ts",
+      "import": "./lib/esm/index.js",
+      "default": "./lib/cjs/index.js"
+    }
+  },
   "scripts": {
     "build": "pnpm rm:build && pnpm build:cjs && pnpm build:esm",
     "build:cjs": "tsc --project tsconfig.cjs.json && tsc-alias -p tsconfig.cjs.json",
