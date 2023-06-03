@@ -28,7 +28,7 @@ const users: User[] = [
   },
 ];
 
-describe('groupBy', () => {
+describe('countBy', () => {
   test('state', () => {
     const result = countBy(users, 'state');
 
