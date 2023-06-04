@@ -37,6 +37,6 @@ describe('countBy', () => {
       CO: 1,
     });
 
-    const result2 = countBy(users, (user) => user.id);
+    const result2 = countBy(users, (user) => user.state);
   });
 });
