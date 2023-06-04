@@ -36,7 +36,14 @@ describe('countBy', () => {
       VA: 2,
       CO: 1,
     });
+  });
 
-    const result2 = countBy(users, (user) => user.state);
+  test('state with function', () => {
+    const result = countBy(users, (user) => user.state);
+
+    expect(Object.fromEntries(result)).toEqual({
+      VA: 2,
+      CO: 1,
+    });
   });
 });
