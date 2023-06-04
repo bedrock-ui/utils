@@ -1,6 +1,6 @@
 import type { TypeofArray } from 'types/array';
 
-export function groupBy<T extends TypeofArray<T>[], P extends keyof TypeofArray<T>>(
+function groupBy<T extends TypeofArray<T>[], P extends keyof TypeofArray<T>>(
   array: T,
   property: P
 ) {
@@ -12,3 +12,5 @@ export function groupBy<T extends TypeofArray<T>[], P extends keyof TypeofArray<
 
   return map;
 }
+
+export { groupBy };

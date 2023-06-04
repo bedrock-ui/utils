@@ -1,4 +1,4 @@
-export function omit<T extends object, P extends keyof T>(object: T, properties: P[]): Omit<T, P> {
+function omit<T extends object, P extends keyof T>(object: T, properties: P[]): Omit<T, P> {
   const newObject = { ...object };
 
   properties.forEach((property) => {
@@ -7,3 +7,5 @@ export function omit<T extends object, P extends keyof T>(object: T, properties:
 
   return newObject;
 }
+
+export { omit };

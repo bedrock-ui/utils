@@ -18,7 +18,7 @@ function sortFn<T>(a: T, b: T): number {
   return 0;
 }
 
-export function orderBy<T extends TypeofArray<T>[], P extends keyof TypeofArray<T>>(
+function orderBy<T extends TypeofArray<T>[], P extends keyof TypeofArray<T>>(
   array: T,
   properties: P[],
   orders: Order[]
@@ -49,3 +49,5 @@ export function orderBy<T extends TypeofArray<T>[], P extends keyof TypeofArray<
       }, 0)
   );
 }
+
+export { orderBy };

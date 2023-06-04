@@ -1,8 +1,9 @@
 export { capitalize } from 'utils/capitalize';
 export { countBy } from 'utils/countBy';
 export { countByFn } from 'utils/countByFn';
-export { chunk } from './utils/chunk';
+export { chunk } from 'utils/chunk';
 export { groupBy } from 'utils/groupBy';
+export { groupByFn } from 'utils/groupByFn';
 export { isEmptyObject } from 'utils/isEmptyObject';
 export { keyBy } from 'utils/keyBy';
 export { omit } from 'utils/omit';

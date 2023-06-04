@@ -1,6 +1,6 @@
 import type { TypeofArray } from 'types/array';
 
-export function chunk<T extends TypeofArray<T>[]>(array: T, size: number): TypeofArray<T>[][] {
+function chunk<T extends TypeofArray<T>[]>(array: T, size: number): TypeofArray<T>[][] {
   if (size < 1) {
     console.warn('chunk - size must be at least 1');
     return [];
@@ -14,3 +14,5 @@ export function chunk<T extends TypeofArray<T>[]>(array: T, size: number): Typeo
 
   return chunks;
 }
+
+export { chunk };
