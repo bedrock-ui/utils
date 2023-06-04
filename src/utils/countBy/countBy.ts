@@ -4,6 +4,11 @@ type FnParam<T extends TypeofArray<T>[]> = (element: TypeofArray<T>) => unknown;
 
 type ArrayParam<T> = keyof TypeofArray<T>;
 
+type CombinedReturn<
+  T extends TypeofArray<T>[],
+  P extends ArrayParam<T> | FnParam<T>
+> = P extends ArrayParam<T> ? TypeofArray<T>[P] : P extends FnParam<T> ? ReturnType<P> : never;
+
 function countBy<T extends TypeofArray<T>[], P extends FnParam<T>>(
   array: T,
   property: P
@@ -17,10 +22,7 @@ function countBy<T extends TypeofArray<T>[], P extends ArrayParam<T>>(
 function countBy<T extends TypeofArray<T>[], P extends ArrayParam<T> | FnParam<T>>(
   array: T,
   property: P
-): Map<
-  P extends ArrayParam<T> ? TypeofArray<T>[P] : P extends FnParam<T> ? ReturnType<P> : never,
-  number
-> {
+): Map<CombinedReturn<T, P>, number> {
   const map = new Map();
 
   array.forEach((element: TypeofArray<T>) => {
