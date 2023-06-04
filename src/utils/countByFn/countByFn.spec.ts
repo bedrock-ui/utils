@@ -1,4 +1,4 @@
-import { countBy } from './countBy';
+import { countByFn } from './countByFn';
 
 interface User {
   id: number;
@@ -28,9 +28,9 @@ const users: User[] = [
   },
 ];
 
-describe('countBy', () => {
+describe('countByFn', () => {
   test('state', () => {
-    const result = countBy(users, 'state');
+    const result = countByFn(users, (user) => user.state);
 
     expect(Object.fromEntries(result)).toEqual({
       VA: 2,
