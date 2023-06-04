@@ -1,0 +1,1 @@
+export { keyByFn } from './keyByFn';

@@ -6,6 +6,7 @@ export { groupBy } from 'utils/groupBy';
 export { groupByFn } from 'utils/groupByFn';
 export { isEmptyObject } from 'utils/isEmptyObject';
 export { keyBy } from 'utils/keyBy';
+export { keyByFn } from 'utils/keyByFn';
 export { omit } from 'utils/omit';
 export { orderBy } from 'utils/orderBy';
 export { range } from 'utils/range';
