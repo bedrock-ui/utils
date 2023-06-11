@@ -9,4 +9,5 @@ export { keyBy } from 'utils/keyBy';
 export { keyByFn } from 'utils/keyByFn';
 export { omit } from 'utils/omit';
 export { orderBy } from 'utils/orderBy';
+export { orderByFn } from 'utils/orderByFn';
 export { range } from 'utils/range';
