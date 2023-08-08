@@ -20,11 +20,11 @@ function sortFn<T>(a: T, b: T): number {
 
 function orderByFn<
   T extends TypeofArray<T>[],
-  P extends (element: TypeofArray<T>) => ReturnType<P>
+  P extends (element: TypeofArray<T>) => ReturnType<P>,
 >(array: T, properties: P[], orders: Order[]) {
   if (properties.length !== orders.length) {
     console.warn(
-      `orderByFn - property and order arrays are not the same length - properties: ${properties}, orders: ${orders}`
+      `orderByFn - property and order arrays are not the same length - properties: ${properties}, orders: ${orders}`,
     );
   }
 
@@ -48,7 +48,7 @@ function orderByFn<
         }
 
         return accumulator;
-      }, 0)
+      }, 0),
   );
 }
 

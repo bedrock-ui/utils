@@ -64,7 +64,7 @@ describe('orderBy', () => {
     const result = orderByFn(
       usersWithDuplicateNames,
       [(user) => user.firstName, (user) => user.id],
-      ['asc', 'asc']
+      ['asc', 'asc'],
     );
 
     expect(result).toEqual([
@@ -79,7 +79,7 @@ describe('orderBy', () => {
 
     expect(mockConsoleWarn).toHaveBeenCalledTimes(1);
     expect(mockConsoleWarn).toHaveBeenCalledWith(
-      'orderByFn - property and order arrays are not the same length - properties: (user) => user.firstName,(user) => user.id, orders: asc'
+      'orderByFn - property and order arrays are not the same length - properties: (user) => user.firstName,(user) => user.id, orders: asc',
     );
   });
 });

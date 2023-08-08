@@ -75,7 +75,7 @@ describe('orderBy', () => {
 
     expect(mockConsoleWarn).toHaveBeenCalledTimes(1);
     expect(mockConsoleWarn).toHaveBeenCalledWith(
-      'orderBy - property and order arrays are not the same length - properties: firstName,id, orders: asc'
+      'orderBy - property and order arrays are not the same length - properties: firstName,id, orders: asc',
     );
   });
 });

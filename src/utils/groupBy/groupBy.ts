@@ -2,7 +2,7 @@ import type { TypeofArray } from 'types/array';
 
 function groupBy<T extends TypeofArray<T>[], P extends keyof TypeofArray<T>>(
   array: T,
-  property: P
+  property: P,
 ) {
   const map = new Map<TypeofArray<T>[P], TypeofArray<T>[]>();
 

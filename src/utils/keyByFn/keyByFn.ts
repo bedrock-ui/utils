@@ -2,7 +2,7 @@ import type { TypeofArray } from 'types/array';
 
 function keyByFn<T extends TypeofArray<T>[], P extends (element: TypeofArray<T>) => ReturnType<P>>(
   array: T,
-  property: P
+  property: P,
 ): Map<ReturnType<P>, TypeofArray<T>> {
   const map = new Map<ReturnType<P>, TypeofArray<T>>();
 

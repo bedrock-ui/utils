@@ -4,7 +4,7 @@ type ArrayParam<T> = keyof TypeofArray<T>;
 
 function countBy<T extends TypeofArray<T>[], P extends ArrayParam<T>>(
   array: T,
-  property: P
+  property: P,
 ): Map<TypeofArray<T>[P], number> {
   const map = new Map();
 
