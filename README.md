@@ -4,7 +4,7 @@ Common utils for all projects
 
 ![license](https://badgen.net/npm/license/@bedrock-ui/utils)
 
-## @bedrock-ui/calendar
+## @bedrock-ui/utils
 
 [npm](https://www.npmjs.com/package/@bedrock-ui/utils)
 
